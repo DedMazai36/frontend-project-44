@@ -5,3 +5,5 @@
 Asciinema of the brain-even: https://asciinema.org/a/ql1q7H39A9WIftp4qyBdF8PQj
 
 Asciinema of the brain-calc: https://asciinema.org/a/zqzs7thJYdlVB6XrdsQs8ka4f
+
+Asciinema of the brain-gcd: https://asciinema.org/a/yGsz8F92uIJ34HqrXgVRhqpFd
