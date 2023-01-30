@@ -1,10 +1,11 @@
+/* eslint-disable no-restricted-syntax */
 function getQuestion(collNumbers) {
-    let resultString = '';
-    for (let number of collNumbers) {
-        resultString += number + ' ';
-    };
+  let resultString = '';
+  for (const number of collNumbers) {
+    resultString += `${number} `;
+  }
 
-    return resultString.slice(0, -1);
-};
+  return resultString.slice(0, -1);
+}
 
-export {getQuestion};
+export default getQuestion;

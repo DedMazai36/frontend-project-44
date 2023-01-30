@@ -1,5 +1,5 @@
 function getQuestion(max = 100) {
-    return Math.floor(Math.random() * max);
-};
+  return Math.floor(Math.random() * max);
+}
 
-export {getQuestion};
+export default getQuestion;

@@ -1,15 +1,15 @@
 function getCorrectAnswer(question) {
-    const collNumbers = question.split(' ');
-    let firstNumber = parseInt(collNumbers[0], 10);
-    let secondNumber = parseInt(collNumbers[1], 10);
+  const collNumbers = question.split(' ');
+  let firstNumber = parseInt(collNumbers[0], 10);
+  let secondNumber = parseInt(collNumbers[1], 10);
 
-    while (secondNumber) {
-        let auxNumber = secondNumber;
-        secondNumber = firstNumber % secondNumber;
-        firstNumber = auxNumber;
-    }
+  while (secondNumber) {
+    const auxNumber = secondNumber;
+    secondNumber = firstNumber % secondNumber;
+    firstNumber = auxNumber;
+  }
 
-    return `${firstNumber}`;
-};
+  return `${firstNumber}`;
+}
 
-export {getCorrectAnswer};
+export default getCorrectAnswer;

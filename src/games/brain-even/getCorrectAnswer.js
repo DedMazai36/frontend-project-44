@@ -1,5 +1,5 @@
 function getCorrectAnswer(question) {
-    return (question % 2 === 0) ? 'yes' : 'no';
-};
+  return (question % 2 === 0) ? 'yes' : 'no';
+}
 
-export {getCorrectAnswer};
+export default getCorrectAnswer;
