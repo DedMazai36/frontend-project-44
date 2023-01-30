@@ -1,17 +1,23 @@
-import { greeting, game } from '../index.js';
+import { gameIndex } from '../index.js';
 import { getQuestion } from './getQuestion.js';
 import { getCorrectAnswer } from './getCorrectAnswer.js';
 
-function brainGame() {
-    const nameUser = greeting('Answer "yes" if the number is even, otherwise answer "no".');
-
+const generateAllRound = () => {
+    const result = [];
     for (let i = 0; i < 3; i += 1) {
         const question = getQuestion();
         const correctAnswer = getCorrectAnswer(question);
-        const result = game(question, correctAnswer, nameUser);
-        if (!result) break;
-        if (i === 2) console.log(`Congratulations, ${nameUser}!`);
-    };
+        result.push(question);
+        result.push(correctAnswer);
+    }
+
+    return result;
 };
 
-export {brainGame};
+const gameEngine = () => {
+    const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+    gameIndex(gameDescription, generateAllRound());
+};
+
+export {gameEngine};
