@@ -1,15 +1,18 @@
 function getQuestion(max = 25) {
     const getRandomOperator = Math.floor(Math.random() * 3);
-    let result = '0 \u002B 0';
+    const firstNumber = Math.floor(Math.random() * max);
+    const secondNumber = Math.floor(Math.random() * max);
+    let result;
+    
     switch (getRandomOperator) {
         case 0:
-            result = `${Math.floor(Math.random() * max)} \u002B ${Math.floor(Math.random() * max)}`;
+            result = `${firstNumber} \u002B ${secondNumber}`;
             break;
         case 1:
-            result = `${Math.floor(Math.random() * max)} \u002D ${Math.floor(Math.random() * max)}`;
+            result = `${firstNumber} \u002D ${secondNumber}`;
             break;
         case 2:
-            result = `${Math.floor(Math.random() * max)} \u002A ${Math.floor(Math.random() * max)}`;
+            result = `${firstNumber} \u002A ${secondNumber}`;
             break;
     };
 
