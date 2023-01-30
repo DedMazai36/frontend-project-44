@@ -3,16 +3,16 @@ function getQuestion(max = 25) {
     const firstNumber = Math.floor(Math.random() * max);
     const secondNumber = Math.floor(Math.random() * max);
     let result;
-    
+
     switch (getRandomOperator) {
         case 0:
-            result = `${firstNumber} \u002B ${secondNumber}`;
+            result = `${firstNumber} + ${secondNumber}`;
             break;
         case 1:
-            result = `${firstNumber} \u002D ${secondNumber}`;
+            result = `${firstNumber} - ${secondNumber}`;
             break;
         case 2:
-            result = `${firstNumber} \u002A ${secondNumber}`;
+            result = `${firstNumber} * ${secondNumber}`;
             break;
     };
 
