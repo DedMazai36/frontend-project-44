@@ -1,18 +1,24 @@
-import { greeting, game } from '../index.js';
+import { gameIndex } from '../index.js';
 import { getQuestion } from './getQuestion.js';
 import { getQuestionAndAnswer } from './getQuestionAndAnswer.js';
 
-function brainGame() {
-    const nameUser = greeting('What number is missing in the progression?');
-
+const generateAllRound = () => {
+    const result = [];
     for (let i = 0; i < 3; i += 1) {
         const questionAndAnswer = getQuestionAndAnswer();
         const question = getQuestion(questionAndAnswer[0]);
         const correctAnswer = questionAndAnswer[1];
-        const result = game(question, correctAnswer, nameUser);
-        if (!result) break;
-        if (i === 2) console.log(`Congratulations, ${nameUser}!`);
-    };
+        result.push(question);
+        result.push(correctAnswer);
+    }
+
+    return result;
 };
 
-export {brainGame};
+const gameEngine = () => {
+    const gameDescription = 'What number is missing in the progression?';
+
+    gameIndex(gameDescription, generateAllRound());
+};
+
+export {gameEngine};
