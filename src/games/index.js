@@ -8,7 +8,7 @@ const greeting = (gameRules) => {
     return nameUser;
 };
 
-const game = (question, correctAnswer, nameUser) => {
+const generateRound = (question, correctAnswer, nameUser) => {
     console.log(`Question: ${question}`);
     const answerUser = getAnswer('Your answer: ');
     const result = answerUser === correctAnswer ? true : false;
@@ -23,4 +23,15 @@ const game = (question, correctAnswer, nameUser) => {
     return result;
 };
 
-export {greeting, game};
+const gameIndex = (gameDescription, allRound) => {
+    const nameUser = greeting(gameDescription);
+
+    for (let i = 0; i < 5; i += 2) {
+        const result = generateRound(allRound[i], allRound[i + 1], nameUser);
+        if (!result) break;
+        if (i === 4) console.log(`Congratulations, ${nameUser}!`);
+    };
+};
+
+export {greeting, gameIndex};
+
