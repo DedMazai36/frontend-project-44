@@ -23,6 +23,18 @@ const generateRound = (question, correctAnswer, nameUser) => {
   return result;
 };
 
+function generateAllRound(getQuestion, getCorrectAnswer) {
+  const result = [];
+  for (let i = 0; i < 3; i += 1) {
+    const question = getQuestion();
+    const correctAnswer = getCorrectAnswer(question);
+    result.push(question);
+    result.push(correctAnswer);
+  }
+
+  return result;
+}
+
 const gameIndex = (gameDescription, allRound) => {
   const nameUser = greeting(gameDescription);
 
@@ -33,4 +45,4 @@ const gameIndex = (gameDescription, allRound) => {
   }
 };
 
-export { greeting, gameIndex };
+export { greeting, gameIndex, generateAllRound };
