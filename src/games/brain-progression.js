@@ -1,23 +1,29 @@
 import { gameEngine, getRandom } from './index.js';
 
 const generateRound = () => {
-  const collNumbers = [];
+  const arrayNumbers = [];
   const step = getRandom(1, 9);
 
-  collNumbers.push(getRandom(0, 50));
+  arrayNumbers.push(getRandom(0, 50));
 
-  const iMax = getRandom(5, 12);
+  const progressionLength = getRandom(5, 12);
+  const hiddenElementIndex = getRandom(0, progressionLength - 1);
+  let hiddenElement = 0;
 
-  for (let i = 1; i <= iMax; i += 1) {
-    collNumbers.push(collNumbers[i - 1] + step);
+  for (let i = 1; i <= progressionLength; i += 1) {
+    arrayNumbers.push(arrayNumbers[i - 1] + step);
+
+    if (i === hiddenElementIndex) {
+      hiddenElement = arrayNumbers.pop();
+      arrayNumbers.push('..');
+      arrayNumbers.push(hiddenElement + step);
+      i += 1;
+    }
   }
 
-  const randomIndex = getRandom(0, iMax);
-  const answer = `${collNumbers[randomIndex]}`;
+  const answer = String(hiddenElement);
 
-  collNumbers[randomIndex] = '..';
-
-  const question = collNumbers.join(' ');
+  const question = arrayNumbers.join(' ');
 
   return [question, answer];
 };
