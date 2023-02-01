@@ -17,14 +17,7 @@ const generateRound = () => {
 
   collNumbers[randomIndex] = '..';
 
-  let question = '';
-
-  // eslint-disable-next-line no-restricted-syntax
-  for (const number of collNumbers) {
-    question += `${number} `;
-  }
-
-  question = question.slice(0, -1);
+  const question = collNumbers.join(' ');
 
   return [question, answer];
 };
