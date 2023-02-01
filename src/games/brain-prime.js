@@ -1,9 +1,7 @@
 import { gameEngine, getRandom } from './index.js';
 
-const generateRound = () => {
-  const num = getRandom(0, 100);
+function isNumberPrime(num) {
   let answer = 'yes';
-  const question = `${num}`;
 
   if (num < 2) {
     answer = 'no';
@@ -15,6 +13,14 @@ const generateRound = () => {
       }
     }
   }
+
+  return answer;
+}
+
+const generateRound = () => {
+  const num = getRandom(0, 100);
+  const question = `${num}`;
+  const answer = isNumberPrime(num);
 
   return [question, answer];
 };
