@@ -17,7 +17,8 @@ function generateAllRound(generateRound) {
   return result;
 }
 
-const gameEngine = (gameDescription, allRound) => {
+const gameEngine = (gameDescription, generateRound) => {
+  const allRound = generateAllRound(generateRound);
   console.log('Welcome to the Brain Games!');
   const nameUser = getAnswer('May I have your name? ');
   console.log(`Hello, ${nameUser}!`);
@@ -39,6 +40,4 @@ const gameEngine = (gameDescription, allRound) => {
   }
 };
 
-export {
-  gameEngine, getRandom, generateAllRound,
-};
+export { gameEngine, getRandom };

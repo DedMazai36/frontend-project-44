@@ -1,4 +1,4 @@
-import { gameEngine, generateAllRound, getRandom } from './index.js';
+import { gameEngine, getRandom } from './index.js';
 
 const generateRound = () => {
   let num1 = getRandom(0, 50);
@@ -19,5 +19,5 @@ const generateRound = () => {
 export default () => {
   const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-  gameEngine(gameDescription, generateAllRound(generateRound));
+  gameEngine(gameDescription, generateRound);
 };

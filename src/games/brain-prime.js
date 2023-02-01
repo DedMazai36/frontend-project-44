@@ -1,4 +1,4 @@
-import { gameEngine, generateAllRound, getRandom } from './index.js';
+import { gameEngine, getRandom } from './index.js';
 
 const generateRound = () => {
   const num = getRandom(0, 100);
@@ -22,5 +22,5 @@ const generateRound = () => {
 export default () => {
   const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  gameEngine(gameDescription, generateAllRound(generateRound));
+  gameEngine(gameDescription, generateRound);
 };

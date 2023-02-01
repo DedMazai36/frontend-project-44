@@ -1,4 +1,4 @@
-import { gameEngine, generateAllRound, getRandom } from './index.js';
+import { gameEngine, getRandom } from './index.js';
 
 const generateRound = () => {
   const collNumbers = [];
@@ -32,5 +32,5 @@ const generateRound = () => {
 export default () => {
   const gameDescription = 'What number is missing in the progression?';
 
-  gameEngine(gameDescription, generateAllRound(generateRound));
+  gameEngine(gameDescription, generateRound);
 };

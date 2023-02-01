@@ -1,4 +1,4 @@
-import { gameEngine, generateAllRound, getRandom } from './index.js';
+import { gameEngine, getRandom } from './index.js';
 
 function getAnswer(num1, num2, operator) {
   let result;
@@ -34,5 +34,5 @@ const generateRound = () => {
 export default () => {
   const gameDescription = 'What is the result of the expression?';
 
-  gameEngine(gameDescription, generateAllRound(generateRound));
+  gameEngine(gameDescription, generateRound);
 };

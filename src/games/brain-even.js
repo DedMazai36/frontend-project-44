@@ -1,4 +1,4 @@
-import { gameEngine, generateAllRound, getRandom } from './index.js';
+import { gameEngine, getRandom } from './index.js';
 
 const generateRound = () => {
   const num = getRandom(0, 100);
@@ -11,5 +11,5 @@ const generateRound = () => {
 export default () => {
   const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  gameEngine(gameDescription, generateAllRound(generateRound));
+  gameEngine(gameDescription, generateRound);
 };
