@@ -19,7 +19,7 @@ function isNumberPrime(num) {
 
 const generateRound = () => {
   const num = getRandom(0, 100);
-  const question = `${num}`;
+  const question = String(num);
   const answer = isNumberPrime(num);
 
   return [question, answer];

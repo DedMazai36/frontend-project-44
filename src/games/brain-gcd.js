@@ -11,7 +11,7 @@ const generateRound = () => {
     num1 = auxNumber;
   }
 
-  const answer = `${num1}`;
+  const answer = String(num1);
 
   return [question, answer];
 };
